@@ -11,20 +11,20 @@
         </div>
         <div class="user-profile__user-posts" v-if="user.posts.length > 0">
             <h1 class="recent-posts">Recent Posts</h1>
-            <div class="user-profile__post" v-for="post in user.posts" :key="post.id">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.excerpt }}</p>
-                <span v-bind:title="post.title" class="post-url">
-                    <a target="_blank" v-bind:href="post.url">{{ post.url }}</a>
-                </span>
-            </div>
+            <PostItem v-for="post in user.posts" :key="post.id" :username="user.username" :post="post" />
         </div>
     </div>
 </template>
 
 <script>
+
+import PostItem from "./PostItem";
+
 export default {
     name: 'UserProfile',
+    components: {
+        PostItem
+    },
     data() {
         return {
                 followers: 105,
@@ -134,41 +134,5 @@ h1 {
     border-radius: 3px;
 
 }
-
-.user-profile__post {
-    border: 1px solid #989898;
-    text-align: left;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    padding: 6px;
-}
-
-.user-profile__post h3 {
-    font-weight: normal;
-    font-size: 14px;
-    margin: 0 auto;
-}
-
-.user-profile__post p {
-    color: gray;
-    font-size: 12px;
-    margin: 6px auto;
-}
-
-h1.recent-posts {
-    font-size: 18px;
-    margin-bottom: 8px;
-    background-color: rebeccapurple;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.post-url a {
-    color: blueviolet;
-    font-size: 12px;
-    text-decoration: none;
-}
-
 
 </style>

@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
     .post-item {
         cursor: pointer;
@@ -69,15 +69,6 @@ export default {
         color: gray;
         font-size: 12px;
         margin: 6px auto;
-    }
-
-    h1.recent-posts {
-        font-size: 18px;
-        margin-bottom: 8px;
-        background-color: rebeccapurple;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
     }
 
     .post-url a {

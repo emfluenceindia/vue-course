@@ -162,7 +162,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .user-profile {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -251,6 +251,15 @@ h1 {
     padding: 6px;
     border-radius: 5px;
     box-sizing: border-box;
+}
+
+h1.recent-posts {
+    font-size: 18px;
+    margin-bottom: 8px;
+    background-color: rebeccapurple;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 </style>

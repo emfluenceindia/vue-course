@@ -14,6 +14,9 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: gainsboro;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

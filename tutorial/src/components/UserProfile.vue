@@ -11,7 +11,13 @@
         </div>
         <div class="user-profile__user-posts" v-if="user.posts.length > 0">
             <h1 class="recent-posts">Recent Posts</h1>
-            <PostItem v-for="post in user.posts" :key="post.id" :username="user.username" :post="post" />
+            <PostItem 
+                v-for="post in user.posts" 
+                :key="post.id" 
+                :username="user.username" 
+                :post="post" 
+                @favourite="toggleFavourite" 
+            />
         </div>
     </div>
 </template>
@@ -81,6 +87,10 @@ export default {
     methods: {
         followUser() {
             this.followers++;
+        },
+
+        toggleFavourite(id) {
+            console.log(id);
         }
     },
     
@@ -106,7 +116,6 @@ export default {
     padding: 20px;
     background-color: white;
     border-radius: 5px;
-    border: 1px solid #666666;
     text-align: left;
 }
 

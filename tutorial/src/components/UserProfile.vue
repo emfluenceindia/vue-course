@@ -6,8 +6,24 @@
                 Admin
             </div>
             <div class="user-profile__follower-count">
-                Followers: {{followers}}
+                {{post_count}} Posts | {{followers}} Followers
            </div>
+           <form class="user-profile__create-post" @submit.prevent="createNewPost">
+               <h2>New Post</h2>
+               <label for="post-title">Post Title</label>
+               <input type="text" id="post-title" name="post-title" v-model="postTitle" />
+               <label for="post-excerpt">Short Descripton</label>
+               <textarea name="post-excerpt" id="post-excerpt" rows="4" v-model="postExcept"></textarea>
+               <label for="post-url">Url</label>
+               <input type="text" id="post-url" name="post-url" v-model="postUrl" />
+               <label for="post-status">Select Status</label>
+               <select name="post-status" id="post-status" v-model="selectedStatus">
+                   <option v-for="status in postStatuses" :key="status.id" :value="status.value">
+                       {{status.display}}
+                   </option>
+               </select>
+               <button>Submit</button>
+           </form>
         </div>
         <div class="user-profile__user-posts" v-if="user.posts.length > 0">
             <h1 class="recent-posts">Recent Posts</h1>
@@ -33,6 +49,29 @@ export default {
     },
     data() {
         return {
+                selectedStatus: 'publish',
+                postTitle: '',
+                postExcept: '',
+                postUrl: '',
+
+                postStatuses:[
+                    {
+                        id: 1,
+                        value: 'draft',
+                        display: 'Save Draft'
+                    },
+                    {
+                        id: 2,
+                        value: 'publish',
+                        display: 'Publish Immediately'
+                    },
+                    {
+                        id: 3,
+                        value: 'schedule',
+                        display: 'Schedule Publish'
+                    }
+                ],
+
                 followers: 105,
                 post_count: 0,
                 user: {
@@ -91,11 +130,33 @@ export default {
 
         toggleFavourite(id) {
             console.log(id);
+        },
+
+        totalPosts() {
+            this.post_count = this.user.posts.length;
+        },
+        
+        createNewPost() {
+            if( this.postTitle && this.postExcept && this.selectedStatus === 'publish' ) {
+                this.user.posts.unshift({
+                    id: this.user.posts.length + 1,
+                    title: this.postTitle,
+                    excerpt: this.postExcept,
+                    url: this.postUrl
+                });
+            }
+
+            this.postTitle = '';
+            this.postExcept = '';
+            this.postUrl = '';
+
+            this.totalPosts();
         }
     },
     
     mounted() {
         this.followUser();
+        this.totalPosts();
         //this.post_count = this.user.posts.length;
     }
 }
@@ -142,6 +203,54 @@ h1 {
     padding: 4px 10px;
     border-radius: 3px;
 
+}
+
+.user-profile__create-post {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.user-profile__create-post h2 {
+    margin: 0;
+    font-weight: normal;
+    color: rebeccapurple;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.user-profile__create-post label {
+    font-size: 11px;
+    padding: 5px 0 2px 0;
+    font-weight: bold;
+}
+
+.user-profile__create-post input[type="text"],
+.user-profile__create-post textarea {
+    padding: 6px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+.user-profile__create-post button {
+    margin-top: 12px;
+    cursor: pointer;
+    background-color: rebeccapurple;
+    color: white;
+    border: 0;
+    padding: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.user-profile__create-post select {
+    border: 1px solid #d3d3d3;
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 </style>

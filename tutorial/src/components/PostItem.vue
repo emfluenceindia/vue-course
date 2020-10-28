@@ -42,17 +42,26 @@ export default {
     .post-item {
         cursor: pointer;
     }
+
     .user-profile__post {
         background-color: white;
         text-align: left;
         border-radius: 5px;
         margin-bottom: 10px;
-        padding: 6px;
+        padding: 12px;
+        box-sizing: border-box;
+        border-bottom: 2px solid #c0c0c0;
+    }
+
+    .post-item__user {
+        font-size: 12px;
+        font-weight: bold;
+        padding-bottom: 5px;
     }
 
     .user-profile__post h3 {
         font-weight: normal;
-        font-size: 14px;
+        font-size: 18px;
         margin: 0 auto;
     }
 

@@ -162,104 +162,115 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .user-profile {
     display: grid;
     grid-template-columns: 1fr 3fr;
     width: 90%;
     padding:50px 5%;
+
+    .user-profile__user-panel {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 5px;
+        text-align: left;
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 150%;
+            font-weight: normal;
+            text-align: left;
+        }
+
+        .user-profile__follower-count {
+            margin: 5px 0;
+            text-align: left;
+            font-size: 84%;
+        }
+
+        .user-profile__admin-badge {
+            background-color: rebeccapurple;
+            color: white;
+            font-size: 80%;
+            margin-top: 5px;
+            margin-right: auto;
+            padding: 4px 10px;
+            border-radius: 3px;
+
+        }
+
+        .user-profile__create-post {
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+
+            h2 {
+                margin: 0;
+                font-weight: normal;
+                color: rebeccapurple;
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+
+            label {
+                font-size: 11px;
+                padding: 5px 0 2px 0;
+                font-weight: bold;
+            }
+
+            input[type="text"], textarea {
+                padding: 6px;
+                border: 1px solid #d3d3d3;
+                border-radius: 5px;
+                box-sizing: border-box;
+                font-family: Avenir, Helvetica, Arial, sans-serif;
+            }
+
+            button {
+                margin-top: 12px;
+                cursor: pointer;
+                background-color: rebeccapurple;
+                color: white;
+                border: 0;
+                padding: 10px 0;
+                text-transform: uppercase;
+                border-radius: 5px;
+            }
+
+            select {
+                border: 1px solid #d3d3d3;
+                font-size: 12px;
+                padding: 6px;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    .user-profile__user-posts {
+        h1.recent-posts {
+            font-size: 18px;
+            margin-bottom: 8px;
+            background-color: rebeccapurple;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    }
 }
 
-.user-profile__user-panel {
-    display: flex;
-    flex-direction: column;
-    margin-right: 50px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-    text-align: left;
-}
 
-h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 150%;
-    font-weight: normal;
-    text-align: left;
-}
 
-.user-profile__follower-count {
-    margin: 5px 0;
-    text-align: left;
-    font-size: 84%;
-}
 
-.user-profile__admin-badge {
-    background-color: rebeccapurple;
-    color: white;
-    font-size: 80%;
-    margin-top: 5px;
-    margin-right: auto;
-    padding: 4px 10px;
-    border-radius: 3px;
 
-}
 
-.user-profile__create-post {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-}
 
-.user-profile__create-post h2 {
-    margin: 0;
-    font-weight: normal;
-    color: rebeccapurple;
-    font-size: 18px;
-    padding-bottom: 10px;
-}
 
-.user-profile__create-post label {
-    font-size: 11px;
-    padding: 5px 0 2px 0;
-    font-weight: bold;
-}
 
-.user-profile__create-post input[type="text"],
-.user-profile__create-post textarea {
-    padding: 6px;
-    border: 1px solid #d3d3d3;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-}
 
-.user-profile__create-post button {
-    margin-top: 12px;
-    cursor: pointer;
-    background-color: rebeccapurple;
-    color: white;
-    border: 0;
-    padding: 10px 0;
-    text-transform: uppercase;
-    border-radius: 5px;
-}
-
-.user-profile__create-post select {
-    border: 1px solid #d3d3d3;
-    font-size: 12px;
-    padding: 6px;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-h1.recent-posts {
-    font-size: 18px;
-    margin-bottom: 8px;
-    background-color: rebeccapurple;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
 
 </style>

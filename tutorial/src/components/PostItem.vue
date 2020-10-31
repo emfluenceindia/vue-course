@@ -37,43 +37,45 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
     .post-item {
         cursor: pointer;
-    }
 
-    .user-profile__post {
-        background-color: white;
-        text-align: left;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        padding: 12px;
-        box-sizing: border-box;
-        border-bottom: 2px solid #c0c0c0;
-    }
+        .user-profile__post {
+            background-color: white;
+            text-align: left;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 12px;
+            box-sizing: border-box;
+            border-bottom: 2px solid #c0c0c0;
 
-    .post-item__user {
-        font-size: 12px;
-        font-weight: bold;
-        padding-bottom: 5px;
-    }
+            .post-item__user {
+                font-size: 12px;
+                font-weight: bold;
+                padding-bottom: 5px;
+            }
 
-    .user-profile__post h3 {
-        font-weight: normal;
-        font-size: 18px;
-        margin: 0 auto;
-    }
-
-    .user-profile__post p {
-        color: gray;
-        font-size: 12px;
-        margin: 6px auto;
-    }
-
-    .post-url a {
-        color: blueviolet;
-        font-size: 12px;
-        text-decoration: none;
+            .post-item__content {
+                h3 {
+                    font-weight: normal;
+                    font-size: 18px;
+                    margin: 0 auto;
+                }
+                p {
+                    color: gray;
+                    font-size: 12px;
+                    margin: 6px auto;
+                }
+                span.post-url {
+                    a {
+                        color: blueviolet;
+                        font-size: 12px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
     }
 </style>

@@ -50,6 +50,11 @@ export default {
             padding: 12px;
             box-sizing: border-box;
             border-bottom: 2px solid #c0c0c0;
+            
+            &:hover {
+                transform: scale(1.01);
+                transition: transform .1s;
+            }
 
             .post-item__user {
                 font-size: 12px;

@@ -1,0 +1,59 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "emfl_api",
+            "firstName": "Subrata",
+            "lastName": "Sarkar",
+            "email": "subrata@emfluence.com",
+            "isAdmin": true,
+            "posts": [
+                {
+                    "id": 1,
+                    "title": "Traditional Cultural Expression: Durga Puja as an Intangible Cultural Heritage",
+                    "excerpt": "The definition of tangible cultural heritage is of physical artefacts produced, maintained and transmitted intergenerationally in society, while intangible...",
+                    "url": "https://ipgyan.com/traditional-cultural-expression-durga-puja-as-an-intangible-cultural-heritage/"
+                },
+                {
+                    "id": 2,
+                    "title": "Business requirements in the modern digital age",
+                    "excerpt": "India is the land of festivals, and if you are Bengali, then the first thing that comes...",
+                    "url": "https://ipgyan.com/business-requirements-in-the-modern-digital-age/"
+                },
+                {
+                    "id": 1,
+                    "title": "Intellectual property law for protecting Indian traditional dresses",
+                    "excerpt": "Pop culture has revived the Bengali way of life back to its screen and made it relevant again...",
+                    "url": "https://ipgyan.com/intellectual-property-law-considerations-of-protecting-laal-paar-shada-shadi/"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "username": "alexvrio",
+            "firstName": "Alex",
+            "lastName": "Vicario",
+            "email": "alexvrio@aol.com",
+            "isAdmin": false,
+            "posts": []
+        },
+        {
+            "id": 3,
+            "username": "halloween",
+            "firstName": "Bob",
+            "lastName": "Silverstein",
+            "email": "bobsilver@wordpress.org",
+            "isAdmin": false,
+            "posts": []
+        },
+        {
+            "id": 4,
+            "username": "coolguy",
+            "firstName": "Michael",
+            "lastName": "Hermando",
+            "email": "pm.hermando@gmx.au",
+            "isAdmin": false,
+            "posts": []
+        }
+    ]
+}

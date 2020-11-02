@@ -35,7 +35,14 @@
             "lastName": "Vicario",
             "email": "alexvrio@aol.com",
             "isAdmin": false,
-            "posts": []
+            "posts": [
+                {
+                    "id": 5,
+                    "title": "Traditional Cultural Expression: Durga Puja as an Intangible Cultural Heritage",
+                    "excerpt": "The definition of tangible cultural heritage is of physical artefacts produced, maintained and transmitted intergenerationally in society, while intangible...",
+                    "url": "https://ipgyan.com/traditional-cultural-expression-durga-puja-as-an-intangible-cultural-heritage/"
+                },
+            ]
         },
         {
             "id": 3,

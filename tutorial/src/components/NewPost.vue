@@ -15,6 +15,7 @@
                    </option>
                </select>
                <button>Submit</button>
+               <!-- File upload: https://www.youtube.com/watch?v=VqnJwh6E9ak -->
            </form>
     </div>
 </template>
